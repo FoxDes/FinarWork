@@ -8,6 +8,7 @@
 
 Console.Clear();
 Console.Write("Введите сумму элементов в массиве: ");
+// Выполняем запрос у пользователя какое колличество элементов массива необходимо
 int x;
 while (!int.TryParse(Console.ReadLine(), out x) || x <= 0) 
 Console.WriteLine("Введите поочередно элементы массива через Enter: ");
@@ -22,6 +23,7 @@ Console.WriteLine("Искомые элементы массива:");
 SearchElements(array);
 PrintArray(newArray);
 
+// Функция определения колличества элементов массива по отдельным элементам
 void FillArray(string[] arr)
 {
     for (int i = 0; i < arr.Length; i++)
@@ -30,6 +32,7 @@ void FillArray(string[] arr)
         array[i] = Console.ReadLine();
     }
 }
+// Фуекция формерующая и выводящая наш массив в должный вид
 void PrintArray(string[] arr)
 {
     Console.Write("[");
@@ -39,6 +42,7 @@ void PrintArray(string[] arr)
         else Console.Write(arr[i] + "]");
     Console.WriteLine();
 }
+// Функция поиска нужных нам элементов в массиве
 void SearchElements(string[] arr) 
 {
     for (int i = 0; i < arr.Length; i++)
