@@ -18,6 +18,10 @@ string[] newArray = new string[x];
 FillArray(array);
 Console.WriteLine("Получившийся массив:");
 PrintArray(array);
+Console.WriteLine("Искомые элементы массива:");
+SearchElements(array);
+PrintArray(newArray);
+
 void FillArray(string[] arr)
 {
     for (int i = 0; i < arr.Length; i++)
@@ -34,4 +38,10 @@ void PrintArray(string[] arr)
             Console.Write(arr[i] + ", ");
         else Console.Write(arr[i] + "]");
     Console.WriteLine();
+}
+void SearchElements(string[] arr) 
+{
+    for (int i = 0; i < arr.Length; i++)
+        if (arr[i].Length <= 3)
+            newArray[i] = arr[i];
 }
