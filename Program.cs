@@ -16,6 +16,8 @@ string[] array = new string[x];
 string[] newArray = new string[x];
 
 FillArray(array);
+Console.WriteLine("Получившийся массив:");
+PrintArray(array);
 void FillArray(string[] arr)
 {
     for (int i = 0; i < arr.Length; i++)
@@ -23,4 +25,13 @@ void FillArray(string[] arr)
         Console.Write("Введите элемент массива №{0}: ", i + 1);
         array[i] = Console.ReadLine();
     }
+}
+void PrintArray(string[] arr)
+{
+    Console.Write("[");
+    for (int i = 0; i < arr.Length; i++)
+        if (i < arr.Length - 1)
+            Console.Write(arr[i] + ", ");
+        else Console.Write(arr[i] + "]");
+    Console.WriteLine();
 }
